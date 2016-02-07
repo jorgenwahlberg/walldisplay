@@ -2,8 +2,8 @@
 
 # This script must be run as root
 
-# set a unique hostname for the device
-echo walldisplay-$(cat /sys/class/net/eth0/address | sed s'/:/-/g') > /etc/hostname
+# Change the hostname init script to one that includes the mac address in the hostname
+cp $HOME/walldisplay/etc_init.d_hostname.sh /etc/init.d/hostname.sh
 
 # update some packages we need
 apt-get -y update
