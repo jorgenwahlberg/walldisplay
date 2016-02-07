@@ -11,7 +11,7 @@ apt-get -y dist-upgrade
 apt-get -y install matchbox chromium x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 libnss3
 
 # copy xinitrc
-cp $HOME/walldisplay/xinitrc $HOME/.xinitrc
+cp $HOME/walldisplay/dotxinitrc $HOME/.xinitrc
 
 # reboot
 echo Please reboot your device:
