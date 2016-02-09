@@ -21,6 +21,14 @@ Resize the file system to make use of the whole SD card:
 
 Log into the raspberry pi once more to continue.
 
+Currently, one raspbian mirror is dead, so we must do a hack to avoid it
+
+  `echo 51.175.204.28   raspbian.trivini.no >> /etc/hosts`
+
+Install some tools
+
+  `sudo apt-get -y install git`
+
 Clone this repository:
 
   `git clone git@github.com:jorgenwahlberg/walldisplay.git`
