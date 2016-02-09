@@ -3,7 +3,7 @@ Using a Raspberry Pi for displaying information on a wall mounted screen
 
 Installation
 
-Download raspbian from https://downloads.raspberrypi.org/raspbian_latest and install
+Download raspbian from https://downloads.raspberrypi.org/raspbian_lite_latest and install
 on an SD card. Installation instructions can be found on
 https://www.raspberrypi.org/documentation/installation/installing-images/README.md
 
