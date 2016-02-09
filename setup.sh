@@ -2,8 +2,9 @@
 
 # This script must be run as root
 
-# Change the hostname init script to one that includes the mac address in the hostname
-cp /home/pi/walldisplay/etc_init.d_hostname.sh /etc/init.d/hostname.sh
+# Install init script setting hostname on boot
+cp /home/pi/walldisplay/walldisplay-sethostname /etc/init.d/walldisplay-sethostname
+update-rc.d walldisplay-sethostname defaults
 
 # update some packages we need
 apt-get -y update
