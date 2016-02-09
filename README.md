@@ -10,27 +10,27 @@ https://www.raspberrypi.org/documentation/installation/installing-images/README.
 Insert the SD card into the Raspberry Pi, make sure it is connected to a network,
 boot it and log into it:
 
-  ssh pi@raspberrypi
+  `ssh pi@raspberrypi`
 
 The default password is "raspberry" (without the quotes).
 
 Resize the file system to make use of the whole SD card:
 
-  raspi-config
+  `raspi-config`
   (select 1, press enter, select Finish, and let the device reboot)
 
 Log into the raspberry pi once more to continue.
 
 Clone this repository:
 
-  git clone git@github.com:jorgenwahlberg/walldisplay.git
+  `git clone git@github.com:jorgenwahlberg/walldisplay.git`
 
 Enter the cloned repository:
 
-  cd walldisplay
+  `cd walldisplay`
 
 Run the setup script as root:
 
-  sudo ./setup.sh
+  `sudo ./setup.sh`
 
 Reboot the device once more. It will now have a hostname resembling walldisplay-11-22-33-aa-bb-cc 
