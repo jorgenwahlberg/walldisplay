@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 while true; do
 
 	# Clean up previously running apps, gracefully at first then harshly
@@ -30,8 +30,24 @@ while true; do
 	# Start the window manager (remove "-use_cursor no" if you actually want mouse interaction)
 	matchbox-window-manager -use_titlebar no -use_cursor no &
 
+        URL=file:///home/pi/info.html
+        MAC=$(cat /sys/class/net/eth0/address)
+        IP=$(hostname -I)
+
+cat >/home/pi/info.html <<_EOT_
+<html>
+<body>
+<p>HW Address: $MAC</p>
+<p>IP Address: $IP</p>
+</body>
+</html>
+_EOT_
+
+curl -o /home/pi/config http://info.api.no/etc/walldisplay/$MAC
+. /home/pi/config
+
 	# Start the browser (See http://peter.sh/experiments/chromium-command-line-switches/)
-	chromium --app=http://admin.api.no/mittari/stats.html?publicationId=&type=all&sort=total&number=10
+	chromium --disable-translate --app="$URL"
 
 done;
 

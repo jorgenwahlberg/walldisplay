@@ -1,9 +1,11 @@
 # walldisplay
 Using a Raspberry Pi for displaying information on a wall mounted screen
 
+Inspired by http://blogs.wcode.org/2013/09/howto-boot-your-raspberry-pi-into-a-fullscreen-browser-kiosk/
+
 Installation
 
-Download raspbian from https://downloads.raspberrypi.org/raspbian_lite_latest and install
+Download raspbian from https://downloads.raspberrypi.org/raspbian/images/raspbian-2015-05-07/2015-05-05-raspbian-wheezy.zip and install
 on an SD card. Installation instructions can be found on
 https://www.raspberrypi.org/documentation/installation/installing-images/README.md
 
@@ -24,10 +26,6 @@ Log into the raspberry pi once more to continue.
 Currently, one raspbian mirror is dead, so we must do a hack to avoid it
 
   `echo 51.175.204.28   raspbian.trivini.no >> /etc/hosts`
-
-Install some tools
-
-  `sudo apt-get -y install git`
 
 Clone this repository:
 
