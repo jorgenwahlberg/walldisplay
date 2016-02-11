@@ -30,11 +30,11 @@ while true; do
 	# Start the window manager (remove "-use_cursor no" if you actually want mouse interaction)
 	matchbox-window-manager -use_titlebar no -use_cursor no &
 
-        URL=file:///home/pi/info.html
+        URL=file:///tmp/info.html
         MAC=$(cat /sys/class/net/eth0/address)
         IP=$(hostname -I)
 
-cat >/home/pi/info.html <<_EOT_
+cat >/tmp/info.html <<_EOT_
 <html>
 <body>
 <p>HW Address: $MAC</p>
@@ -43,8 +43,9 @@ cat >/home/pi/info.html <<_EOT_
 </html>
 _EOT_
 
-curl -o /home/pi/config http://info.api.no/etc/walldisplay/$MAC
-. /home/pi/config
+curl -o /tmp/config http://info.api.no/etc/walldisplay/$MAC
+grep URL /tmp/config || echo "URL=file:///tmp/info.html" > /tmp/config
+. /tmp/config
 
 	# Start the browser (See http://peter.sh/experiments/chromium-command-line-switches/)
 	chromium --disable-translate --app="$URL"
