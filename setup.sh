@@ -19,6 +19,9 @@ cp /home/pi/walldisplay/rc.local /etc/rc.local
 cp /home/pi/walldisplay/dotxinitrc /home/pi/.xinitrc
 chown pi.pi /home/pi/.xinitrc
 
+# urlwatch
+apt-get -y install urlwatch
+
 # reboot
 echo Please reboot your device:
 echo \$ sudo reboot

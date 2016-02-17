@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# set up urlwatch to restart chromium when config changes
+echo http://info.api.no/etc/walldisplay/$(cat /sys/class/net/eth0/address) > /home/pi/.urlwatch/urls.txt
+echo "* * * * * urlwatch | grep ^CHANGED && killall chromium" | crontab
+
 while true; do
 
 	# Clean up previously running apps, gracefully at first then harshly
