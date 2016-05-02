@@ -11,6 +11,9 @@ apt-get -y update
 apt-get -y dist-upgrade
 apt-get -y install matchbox x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 libnss3 chromium
 
+# set time zone to Norwegian time
+sudo cp /usr/share/zoneinfo/posix/Europe/Oslo /etc/localtime
+
 # config files
 cp /home/pi/walldisplay/boot_config.txt /boot/config.txt
 cp /home/pi/walldisplay/rc.local /etc/rc.local
