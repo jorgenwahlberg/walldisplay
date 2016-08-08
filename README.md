@@ -5,7 +5,7 @@ Inspired by http://blogs.wcode.org/2013/09/howto-boot-your-raspberry-pi-into-a-f
 
 Installation
 
-Download raspbian from https://downloads.raspberrypi.org/raspbian/images/raspbian-2015-05-07/2015-05-05-raspbian-wheezy.zip and install
+Download raspbian from https://downloads.raspberrypi.org/raspbian_lite_latest and install
 on an SD card. Installation instructions can be found on
 https://www.raspberrypi.org/documentation/installation/installing-images/README.md
 

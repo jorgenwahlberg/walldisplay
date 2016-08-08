@@ -6,10 +6,19 @@
 #cp /home/pi/walldisplay/walldisplay-sethostname /etc/init.d/walldisplay-sethostname
 #update-rc.d walldisplay-sethostname defaults
 
+# don't start window manager by default
+systemctl set-default multi-user.target
+
 # update some packages we need
 apt-get -y update
 apt-get -y dist-upgrade
-apt-get -y install matchbox x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 libnss3 chromium
+apt-get -y install matchbox x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3
+
+# install chromium
+echo "deb http://ppa.launchpad.net/canonical-chromium-builds/stage/ubuntu vivid main” > /etc/apt/sources.list.d/chromium-ppa.list
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DB69B232436DAC4B50BDC59E4E1B983C5B393194
+apt update
+apt install chromium-browser
 
 # set time zone to Norwegian time
 sudo cp /usr/share/zoneinfo/posix/Europe/Oslo /etc/localtime
