@@ -19,7 +19,7 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DB69B232436DAC4B50BDC59
 # update packages and install chromium-browser and some dependencies
 apt-get -y update
 apt-get -y dist-upgrade
-apt-get -y install xinit matchbox x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 chromium-browser install urlwatch
+apt-get -y install xinit matchbox x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 chromium-browser urlwatch
 
 # config files
 cp /home/pi/walldisplay/boot_config.txt /boot/config.txt
