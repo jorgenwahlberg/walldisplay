@@ -16,13 +16,6 @@ boot it and log into it:
 
 The default password is "raspberry" (without the quotes).
 
-Resize the file system to make use of the whole SD card:
-
-  `raspi-config`
-  (select 1, press enter, select Finish, and let the device reboot)
-
-Log into the raspberry pi once more to continue.
-
 Currently, one raspbian mirror is dead, so we must do a hack to avoid it
 
   `echo 51.175.204.28   raspbian.trivini.no >> /etc/hosts`
