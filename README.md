@@ -16,9 +16,10 @@ boot it and log into it:
 
 The default password is "raspberry" (without the quotes).
 
-Currently, one raspbian mirror is dead, so we must do a hack to avoid it
+We need git to continue, so we install it:
 
-  `echo 51.175.204.28   raspbian.trivini.no >> /etc/hosts`
+  `sudo apt-get update`
+  `sudo apt-get install -y git`
 
 Clone this repository:
 
@@ -32,4 +33,5 @@ Run the setup script as root:
 
   `sudo ./setup.sh`
 
-Reboot the device once more. It will now have a hostname resembling walldisplay-11-22-33-aa-bb-cc 
+Reboot the device once more. It will now start a chromium browser with a URL fetched by the .xinitrc script.
+
