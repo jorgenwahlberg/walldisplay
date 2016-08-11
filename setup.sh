@@ -10,7 +10,7 @@
 systemctl set-default multi-user.target
 
 # add ubuntu repo where we can find chromium-browser package
-echo "deb http://ppa.launchpad.net/canonical-chromium-builds/stage/ubuntu vivid main” > /etc/apt/sources.list.d/chromium-ppa.list
+echo "deb http://ppa.launchpad.net/canonical-chromium-builds/stage/ubuntu vivid main" > /etc/apt/sources.list.d/chromium-ppa.list
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DB69B232436DAC4B50BDC59E4E1B983C5B393194
 
 # update packages and install chromium-browser and some dependencies
