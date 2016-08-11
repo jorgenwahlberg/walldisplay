@@ -9,6 +9,9 @@
 # don't start window manager by default
 systemctl set-default multi-user.target
 
+# set time zone to Norwegian time
+sudo cp /usr/share/zoneinfo/posix/Europe/Oslo /etc/localtime
+
 # add ubuntu repo where we can find chromium-browser package
 echo "deb http://ppa.launchpad.net/canonical-chromium-builds/stage/ubuntu vivid main" > /etc/apt/sources.list.d/chromium-ppa.list
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DB69B232436DAC4B50BDC59E4E1B983C5B393194
@@ -16,11 +19,7 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DB69B232436DAC4B50BDC59
 # update packages and install chromium-browser and some dependencies
 apt-get -y update
 apt-get -y dist-upgrade
-apt-get -y install matchbox x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3
-apt-get -y install chromium-browser
-
-# set time zone to Norwegian time
-sudo cp /usr/share/zoneinfo/posix/Europe/Oslo /etc/localtime
+apt-get -y install matchbox x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 chromium-browser install urlwatch
 
 # config files
 cp /home/pi/walldisplay/boot_config.txt /boot/config.txt
@@ -29,9 +28,6 @@ cp /home/pi/walldisplay/rc.local /etc/rc.local
 # copy pi user's xinitrc
 cp /home/pi/walldisplay/dotxinitrc /home/pi/.xinitrc
 chown pi.pi /home/pi/.xinitrc
-
-# urlwatch
-apt-get -y install urlwatch
 
 # reboot
 echo Please reboot your device:
