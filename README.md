@@ -19,6 +19,7 @@ The default password is "raspberry" (without the quotes).
 We need git to continue, so we install it:
 
   `sudo apt-get update`
+  
   `sudo apt-get install -y git`
 
 Clone this repository:
