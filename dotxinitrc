@@ -41,7 +41,13 @@ while true; do
 
 cat >/tmp/info.html <<_EOT_
 <html>
+<style>
+h1 { font-size: 48px; }
+p { font-size: 24px; }
+</style>
 <body>
+<h1>No config found at http://info.api.no/etc/walldisplay/$MAC?ip=$IP</h1>
+<hr>
 <p>HW Address: $MAC</p>
 <p>IP Address: $IP</p>
 </body>
