@@ -16,7 +16,7 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DB69B232436DAC4B50BDC59
 # update packages and install chromium-browser and some dependencies
 apt-get -y update
 apt-get -y dist-upgrade
-apt-get -y install xinit matchbox x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 chromium-browser urlwatch
+apt-get -y install xinit matchbox xserver-xorg xserver-xorg-legacy x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 chromium-browser urlwatch
 
 # set time zone to Norwegian time
 sudo cp /usr/share/zoneinfo/posix/Europe/Oslo /etc/localtime
