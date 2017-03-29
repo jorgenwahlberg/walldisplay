@@ -2,7 +2,11 @@
 
 # set up urlwatch to restart chromium when config changes
 echo http://info.api.no/etc/walldisplay/$(cat /sys/class/net/eth0/address)?ip=$(hostname -I) > /home/pi/.urlwatch/urls.txt
-echo "* * * * * urlwatch | grep ^CHANGED && killall chromium-browser" | crontab
+
+crontab <<_EOT_
+* * * * * urlwatch | grep ^CHANGED && killall chromium-browser
+0 5 * * * killall chromium-browser
+_EOT_
 
 while true; do
 
