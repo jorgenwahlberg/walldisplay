@@ -58,7 +58,7 @@ p { font-size: 24px; }
 </html>
 _EOT_
 
-curl -k -o /tmp/config https://info.api.no/etc/walldisplay/$MAC?ip=$IP
+curl -o /tmp/config https://info.api.no/etc/walldisplay/$MAC?ip=$IP
 grep URL /tmp/config || echo "URL=file:///tmp/info.html" > /tmp/config
 . /tmp/config
 
