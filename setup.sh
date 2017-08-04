@@ -19,9 +19,11 @@ echo "deb http://ppa.launchpad.net/canonical-chromium-builds/stage/ubuntu vivid 
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DB69B232436DAC4B50BDC59E4E1B983C5B393194
 
 # update packages and install chromium-browser and some dependencies
-DEBIAN_FRONTEND=noninteractive apt-get -y update
-DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
-DEBIAN_FRONTEND=noninteractive apt-get -y install xinit matchbox xserver-xorg xserver-xorg-legacy x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 chromium-browser urlwatch
+export DEBIAN_FRONTEND=noninteractive
+export APT_LISTCHANGES_FRONTEND=cat
+apt-get -y update
+apt-get -y dist-upgrade
+apt-get -y install xinit matchbox xserver-xorg xserver-xorg-legacy x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 chromium-browser urlwatch
 
 # set time zone to Norwegian time
 sudo cp /usr/share/zoneinfo/posix/Europe/Oslo /etc/localtime
