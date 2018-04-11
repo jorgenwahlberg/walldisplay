@@ -15,15 +15,18 @@ sudo dphys-swapfile uninstall
 sudo update-rc.d dphys-swapfile remove
 
 # add ubuntu repo where we can find chromium-browser package
-echo "deb http://ppa.launchpad.net/canonical-chromium-builds/stage/ubuntu vivid main" > /etc/apt/sources.list.d/chromium-ppa.list
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DB69B232436DAC4B50BDC59E4E1B983C5B393194
+echo "deb http://ports.ubuntu.com trusty main universe multiverse" > /etc/apt/sources.list.d/ubuntu.list
+echo "deb http://ports.ubuntu.com trusty-updates main universe multiverse" >> /etc/apt/sources.list.d/ubuntu.list
+echo 'APT::Default-Release "jessie";' > /etc/apt/apt.conf.d/10release
+apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv-keys 40976EAF437D05B5 3B4FE6ACC0B21F32
+
 
 # update packages and install chromium-browser and some dependencies
 export DEBIAN_FRONTEND=noninteractive
 export APT_LISTCHANGES_FRONTEND=cat
 apt-get -y update
 apt-get -y dist-upgrade
-apt-get -y install xinit matchbox xserver-xorg xserver-xorg-legacy x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 chromium-browser urlwatch
+apt-get -y install xinit matchbox xserver-xorg xserver-xorg-legacy x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 urlwatch chromium-browser/trusty chromium-browser-l10n/trusty chromium-codecs-ffmpeg-extra/trusty
 
 # set time zone to Norwegian time
 sudo cp /usr/share/zoneinfo/posix/Europe/Oslo /etc/localtime
