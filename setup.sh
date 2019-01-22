@@ -31,10 +31,13 @@ chown pi.pi /home/pi/.xinitrc
 # X server config
 echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
 
+# fix for getting usual interface names
+echo "net.ifnames=0 `cat /boot/cmdline.txt`" > /boot/cmdline.txt
+
 # setup overlayfs to reduce sd card wear
 # for details, see
 # https://gist.github.com/dzindra/a8e2083a7f037ca244cf70d100c96656
-cp overlay /etc/initramfs-tools/scripts/
+cp /home/pi/walldisplay/overlay /etc/initramfs-tools/scripts/
 echo "overlay" >> /etc/initramfs-tools/modules
 mkdir /overlay /overlay/temp /overlay/base
 update-initramfs -c -k `uname -r`
