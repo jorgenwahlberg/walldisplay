@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # set up urlwatch to restart chromium when config changes
+mkdir -p /home/pi/.urlwatch
 echo https://info.api.no/etc/walldisplay/$(cat /sys/class/net/eth0/address)?ip=$(hostname -I) > /home/pi/.urlwatch/urls.txt
 
 crontab <<_EOT_
