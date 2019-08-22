@@ -15,7 +15,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get -y purge apt-listchanges
 apt-get -y update
 apt-get -y dist-upgrade
-apt-get -y install xinit matchbox xserver-xorg xserver-xorg-legacy x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 urlwatch chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra
+apt-get -y install xinit matchbox xserver-xorg xserver-xorg-legacy x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 urlwatch chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra initramfs-tools
 
 # set time zone to Norwegian time
 sudo cp /usr/share/zoneinfo/posix/Europe/Oslo /etc/localtime
